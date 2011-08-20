@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN"
+	"http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+
+<!--
+	For a detailed description of NCX usage please refer to:
+	http://www.idpf.org/2007/opf/OPF_2.0_final_spec.html#Section2.4.1
+-->
+
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en-US">
+<head>
+<meta name="dtb:uid" content="BookId"/>
+<meta name="dtb:depth" content="2"/>
+<meta name="dtb:totalPageCount" content="0"/>
+<meta name="dtb:maxPageNumber" content="0"/>
+</head>
+<docTitle><text>Kindle User's Guide</text></docTitle>
+<docAuthor><text>Amazon.com</text></docAuthor>
+  <navMap>
+    <navPoint class="toc" id="toc" playOrder="1">
+      <navLabel>
+        <text>Table of Contents</text>
+      </navLabel>
+      <content src="toc.html"/>
+    </navPoint>
+    <navPoint class="welcome" id="welcome" playOrder="2">
+      <navLabel>
+        <text>Welcome</text>
+      </navLabel>
+      <content src="Welcome.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="chapter_1" playOrder="3">
+      <navLabel>
+        <text>Chapter 1: Getting Started with Your Kindle</text>
+      </navLabel>
+      <content src="UG-C1.html"/>
+      <navPoint class="section" id="_1.1" playOrder="4">
+        <navLabel>
+          <text>1.1 Views of Kindle</text>
+        </navLabel>
+        <content src="UG-C1.html#id_1.1"/>
+      </navPoint>
+      <navPoint class="section" id="_1.2" playOrder="5">
+        <navLabel>
+          <text>1.2 Getting Around</text>
+        </navLabel>
+        <content src="UG-C1.html#id_1.2"/>
+      </navPoint>
+      <navPoint class="section" id="_1.3" playOrder="6">
+        <navLabel>
+          <text>1.3 Entering Text</text>
+        </navLabel>
+        <content src="UG-C1.html#id_1.3"/>
+      </navPoint>
+      <navPoint class="section" id="_1.4" playOrder="7">
+        <navLabel>
+          <text>1.4 Status Indicators</text>
+        </navLabel>
+        <content src="UG-C1.html#id_1.4"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="chapter_2" playOrder="8">
+      <navLabel>
+        <text>Chapter 2: Getting to Know Kindle Content</text>
+      </navLabel>
+      <content src="UG-C2.html"/>
+      <navPoint class="section" id="_2.1" playOrder="9">
+        <navLabel>
+          <text>2.1 The Home Screen</text>
+        </navLabel>
+        <content src="UG-C2.html#id_2.1"/>
+      </navPoint>
+      <navPoint class="section" id="_2.2" playOrder="10">
+        <navLabel>
+          <text>2.2 Managing Your Content</text>
+        </navLabel>
+        <content src="UG-C2.html#id_2.2"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="chapter_3" playOrder="11">
+      <navLabel>
+        <text>Chapter 3: Reading on Kindle</text>
+      </navLabel>
+      <content src="UG-C3.html"/>
+      <navPoint class="section" id="_3.1" playOrder="12">
+        <navLabel>
+          <text>3.1 Types of Content</text>
+        </navLabel>
+        <content src="UG-C3.html#id_3.1"/>
+      </navPoint>
+      <navPoint class="section" id="_3.2" playOrder="13">
+        <navLabel>
+          <text>3.2 Content Formatting on Kindle</text>
+        </navLabel>
+        <content src="UG-C3.html#id_3.2"/>
+      </navPoint>
+      <navPoint class="section" id="_3.3" playOrder="14">
+        <navLabel>
+          <text>3.3 Moving from Place to Place</text>
+        </navLabel>
+        <content src="UG-C3.html#id_3.3"/>
+      </navPoint>
+      <navPoint class="section" id="_3.4" playOrder="15">
+        <navLabel>
+          <text>3.4 Looking Up Definitions</text>
+        </navLabel>
+        <content src="UG-C3.html#id_3.4"/>
+      </navPoint>
+      <navPoint class="section" id="_3.5" playOrder="16">
+        <navLabel>
+          <text>3.5 Annotations and Clippings</text>
+        </navLabel>
+        <content src="UG-C3.html#id_3.5"/>
+      </navPoint>
+      <navPoint class="section" id="_3.6" playOrder="17">
+        <navLabel>
+          <text>3.6 Listening to Audio Materials</text>
+        </navLabel>
+        <content src="UG-C3.html#id_3.6"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="chapter_4" playOrder="18">
+      <navLabel>
+        <text>Chapter 4: Searching on Kindle</text>
+      </navLabel>
+      <content src="UG-C4.html"/>
+      <navPoint class="section" id="_4.1" playOrder="19">
+        <navLabel>
+          <text>4.1 Introduction to Search</text>
+        </navLabel>
+        <content src="UG-C4.html#id_4.1"/>
+      </navPoint>
+      <navPoint class="section" id="_4.2" playOrder="20">
+        <navLabel>
+          <text>4.2 Search Results Page</text>
+        </navLabel>
+        <content src="UG-C4.html#id_4.2"/>
+      </navPoint>
+      <navPoint class="section" id="_4.3" playOrder="21">
+        <navLabel>
+          <text>4.3 Performing Remote Searches</text>
+        </navLabel>
+        <content src="UG-C4.html#id_4.3"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="chapter_5" playOrder="22">
+      <navLabel>
+        <text>Chapter 5: The Kindle Store</text>
+      </navLabel>
+      <content src="UG-C5.html"/>
+      <navPoint class="section" id="_5.1" playOrder="23">
+        <navLabel>
+          <text>5.1 Getting Started at the Store</text>
+        </navLabel>
+        <content src="UG-C5.html#id_5.1"/>
+      </navPoint>
+      <navPoint class="section" id="_5.2" playOrder="24">
+        <navLabel>
+          <text>5.2 Kindle Store Pages</text>
+        </navLabel>
+        <content src="UG-C5.html#id_5.2"/>
+      </navPoint>
+      <navPoint class="section" id="_5.3" playOrder="25">
+        <navLabel>
+          <text>5.3 Recommendations, Reviews, and Ratings</text>
+        </navLabel>
+        <content src="UG-C5.html#id_5.3"/>
+      </navPoint>
+      <navPoint class="section" id="_5.4" playOrder="26">
+        <navLabel>
+          <text>5.4 Making Purchases</text>
+        </navLabel>
+        <content src="UG-C5.html#id_5.4"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="chapter_6" playOrder="27">
+      <navLabel>
+        <text>Chapter 6: Accessing the Web</text>
+      </navLabel>
+      <content src="UG-C6.html"/>
+      <navPoint class="section" id="_6.1" playOrder="28">
+        <navLabel>
+          <text>6.1 Using Basic Web</text>
+        </navLabel>
+        <content src="UG-C6.html#id_6.1"/>
+      </navPoint>
+      <navPoint class="section" id="_6.2" playOrder="29">
+        <navLabel>
+          <text>6.2 Other Features</text>
+        </navLabel>
+        <content src="UG-C6.html#id_6.2"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="chapter_7" playOrder="30">
+      <navLabel>
+        <text>Chapter 7: Settings and Experimental</text>
+      </navLabel>
+      <content src="UG-C7.html"/>
+      <navPoint class="section" id="_7.1" playOrder="31">
+        <navLabel>
+          <text>7.1 Adjusting Your Kindle Settings</text>
+        </navLabel>
+        <content src="UG-C7.html#id_7.1"/>
+      </navPoint>
+      <navPoint class="section" id="_7.2" playOrder="32">
+        <navLabel>
+          <text>7.2 Experimental</text>
+        </navLabel>
+        <content src="UG-C7.html#id_7.2"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="chapter_8" playOrder="33">
+      <navLabel>
+        <text>Chapter 8: Kindle and Your Computer</text>
+      </navLabel>
+      <content src="UG-C8.html"/>
+      <navPoint class="section" id="_8.1" playOrder="34">
+        <navLabel>
+          <text>8.1 Getting Started</text>
+        </navLabel>
+        <content src="UG-C8.html#id_8.1"/>
+      </navPoint>
+      <navPoint class="section" id="_8.2" playOrder="35">
+        <navLabel>
+          <text>8.2 Handling Files through USB</text>
+        </navLabel>
+        <content src="UG-C8.html#id_8.2"/>
+      </navPoint>
+      <navPoint class="section" id="_8.3" playOrder="36">
+        <navLabel>
+          <text>8.3 Converting and Transferring Your Documents</text>
+        </navLabel>
+        <content src="UG-C8.html#id_8.3"/>
+      </navPoint>
+      <navPoint class="section" id="_8.4" playOrder="37">
+        <navLabel>
+          <text>8.4 Audiobooks and MP3s</text>
+        </navLabel>
+        <content src="UG-C8.html#id_8.4"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="chapter_9" playOrder="38">
+      <navLabel>
+        <text>Chapter 9: Your Kindle and Amazon.com</text>
+      </navLabel>
+      <content src="UG-C9.html"/>
+      <navPoint class="section" id="_9.1" playOrder="39">
+        <navLabel>
+          <text>9.1 Shopping for Kindle Content on Amazon.com</text>
+        </navLabel>
+        <content src="UG-C9.html#id_9.1"/>
+      </navPoint>
+      <navPoint class="section" id="_9.2" playOrder="40">
+        <navLabel>
+          <text>9.2 Managing Your Kindle on Amazon.com</text>
+        </navLabel>
+        <content src="UG-C9.html#id_9.2"/>
+      </navPoint>
+      <navPoint class="section" id="_9.3" playOrder="41">
+        <navLabel>
+          <text>9.3 Contacting Kindle Support</text>
+        </navLabel>
+        <content src="UG-C9.html#id_9.3"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="chapter_10" playOrder="42">
+      <navLabel>
+        <text>Chapter 10: Migrating Your Content to Your New Kindle</text>
+      </navLabel>
+      <content src="UG-C10.html"/>
+      <navPoint class="section" id="_10.1" playOrder="43">
+        <navLabel>
+          <text>10.1 Transferring Books</text>
+        </navLabel>
+        <content src="UG-C10.html#id_10.1"/>
+      </navPoint>
+      <navPoint class="section" id="_10.2" playOrder="44">
+        <navLabel>
+          <text>10.2 Transferring Periodical Subscriptions</text>
+        </navLabel>
+        <content src="UG-C10.html#id_10.2"/>
+      </navPoint>
+      <navPoint class="section" id="_10.3" playOrder="45">
+        <navLabel>
+          <text>10.3 Transferring Personal Documents</text>
+        </navLabel>
+        <content src="UG-C10.html#id_10.3"/>
+      </navPoint>
+      <navPoint class="section" id="_10.4" playOrder="46">
+        <navLabel>
+          <text>10.4 Transferring Audiobooks</text>
+        </navLabel>
+        <content src="UG-C10.html#id_10.4"/>
+      </navPoint>
+      <navPoint class="section" id="_10.5" playOrder="47">
+        <navLabel>
+          <text>10.5 Transferring MP3s</text>
+        </navLabel>
+        <content src="UG-C10.html#id_10.5"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="appendix" id="appendix" playOrder="48">
+      <navLabel>
+        <text>Appendix: Specifications</text>
+      </navLabel>
+      <content src="Specifications.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

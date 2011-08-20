@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The unique identifier in <package unique-identifier=”XYZ”> is a reference to
+  the identifier specified in <metadata> as <dc:Identifier id=”XYZ”>.
+-->
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="BookId">
+
+<!--
+	Metadata:
+	The required metadata element is used to provide information about the publication
+	as a whole.
+	
+	For detailed info visit: http://www.idpf.org/2007/opf/OPF_2.0_final_spec.html#Section2.2
+-->
+	
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+  
+  <!-- Title [mandatory]: The title of the publication. This is the title that will appear on the "Home" screen. -->
+  
+	<dc:title>Kindle User's Guide</dc:title>
+  
+  <!-- Language [mandatory]: the language of the publication. The language codes used are the same as in XML
+  and HTML. The full list can be found here: http://www.w3.org/International/articles/language-tags/
+  Some common language strings are:
+  "en"    English
+  "en-us" English - USA
+  "en-gb" English - United Kingdom
+  "fr"    French
+  "fr-ca" French - Canada
+  "de"    German
+  "es"    Spanish
+  -->
+	<dc:language>en-us</dc:language>
+
+  <!-- Cover [mandatory]. The cover image must be specified in <manifest> and referenced from
+  this <meta> element with a name="cover" attribute.
+  -->
+  <meta name="cover" content="My_Cover" />
+  
+  <!-- The ISBN of your book goes here -->
+  
+	<dc:identifier id="BookId" opf:scheme="ISBN">9781375890815</dc:identifier>
+  
+  <!-- The author of the book. For multiple authors, use multiple <dc:Creator> tags.
+       Additional contributors whose contributions are secondary to those listed in
+       creator  elements should be named in contributor elements.
+  -->
+	<dc:creator>Amazon.com</dc:creator>
+  
+  <!-- Publisher: An entity responsible for making the resource available -->
+  
+	<dc:publisher>Amazon.com</dc:publisher>
+  
+  <!-- Subject: A topic of the content of the resource. Typically, Subject will be
+		   expressed as keywords, key phrases or classification codes that describe a topic
+		   of the resource. The BASICCode attribute should contain the subject code
+       according to the BISG specification:
+       http://www.bisg.org/what-we-do-20-73-bisac-subject-headings-2008-edition.php
+   -->
+	<dc:subject>Reference</dc:subject>
+  
+  <!-- Date: Date of publication in YYYY-MM-DD format. (Days and month can be omitted).
+       Standard to follow: http://www.w3.org/TR/NOTE-datetime
+  -->
+	<dc:date>2009-11-17</dc:date>
+
+  <!-- Description: A short description of the publication's content. -->
+  <dc:description>An overview of all the Amazon Kindle features and how to use them. 3rd Edition.</dc:description>
+	
+</metadata>
+
+<!--
+	Manifest:
+	The required manifest must provide a list of all the files that are part of the
+	publication (e.g. Content Documents, NCX table of contents, image files, CSS style sheets).
+  Kindlegen however does not require CSS and images to be specified in the manifest if they
+  are referenced from the content HTML.
+	The manifest element must contain one or more item elements with the following media-type attributes:
+  
+  text/x-oeb1-document      HTML content files
+  application/x-dtbncx+xml  NCX table of contents
+  image/jpeg                JPEG image
+  image/GIF                 GIF image
+  
+	For detailed info visit: http://www.idpf.org/2007/opf/OPF_2.0_final_spec.html#Section2.3
+-->
+
+<manifest>
+  <!-- HTML content files [mandatory] -->
+	<item id="item3" media-type="application/xhtml+xml" href="UG-C2.html"></item>
+	<item id="item4" media-type="application/xhtml+xml" href="UG-C3.html"></item>
+	<item id="item5" media-type="application/xhtml+xml" href="UG-C4.html"></item>
+	<item id="item6" media-type="application/xhtml+xml" href="UG-C5.html"></item>
+	<item id="item8" media-type="application/xhtml+xml" href="UG-C7.html"></item>
+	<item id="item1" media-type="application/xhtml+xml" href="UG-C1.html"></item>
+	<item id="item14" media-type="application/xhtml+xml" href="toc.html"></item>
+	<item id="item15" media-type="application/xhtml+xml" href="UG-C6.html"></item>
+	<item id="item13" media-type="application/xhtml+xml" href="Welcome.html"></item>
+	<item id="item16" media-type="application/xhtml+xml" href="UG-C8.html"></item>
+	<item id="item18" media-type="application/xhtml+xml" href="UG-C9.html"></item>
+	<item id="item19" media-type="application/xhtml+xml" href="UG-C10.html"></item>
+	<item id="item20" media-type="application/xhtml+xml" href="Specifications.html"></item>
+
+	<item id="GraphicsC5_C5Screen-rating" media-type="image/gif" href="GraphicsC5/C5Screen-rating.gif"/>
+	<item id="GraphicsC5_C5Screen-Storefront" media-type="image/gif" href="GraphicsC5/C5Screen-Storefront.gif"/>
+	<item id="GraphicsC5_C5Screen-Details" media-type="image/gif" href="GraphicsC5/C5Screen-Details.gif"/>
+	<item id="GraphicsC5_C5Screen-browse" media-type="image/gif" href="GraphicsC5/C5Screen-browse.gif"/>
+	<item id="GraphicsC5_C5Screen-writereview" media-type="image/gif" href="GraphicsC5/C5Screen-writereview.gif"/>
+	<item id="GraphicsC5_C5Screen-Storemenu" media-type="image/gif" href="GraphicsC5/C5Screen-Storemenu.gif"/>
+	<item id="GraphicsC5_C5Screen-Reviews" media-type="image/gif" href="GraphicsC5/C5Screen-Reviews.gif"/>
+	<item id="GraphicsC8_C8Image-shiftkey" media-type="image/gif" href="GraphicsC8/C8Image-shiftkey.gif"/>
+	<item id="GraphicsC8_C8Image-usbconnection" media-type="image/gif" href="GraphicsC8/C8Image-usbconnection.gif"/>
+	<item id="GraphicsC6_C6Screen-search-bar" media-type="image/gif" href="GraphicsC6/C6Screen-search-bar.gif"/>
+	<item id="GraphicsC6_C6Screen-enterURL" media-type="image/gif" href="GraphicsC6/C6Screen-enterURL.gif"/>
+	<item id="GraphicsC6_C6Screen-webmenu" media-type="image/gif" href="GraphicsC6/C6Screen-webmenu.gif"/>
+	<item id="GraphicsC6_C6Screen-settings" media-type="image/gif" href="GraphicsC6/C6Screen-settings.gif"/>
+	<item id="GraphicsC6_C6Screen-webpage" media-type="image/gif" href="GraphicsC6/C6Screen-webpage.gif"/>
+	<item id="GraphicsC6_C6Screen-search-from-home" media-type="image/gif" href="GraphicsC6/C6Screen-search-from-home.gif"/>
+	<item id="GraphicsC1_C1Image-topview" media-type="image/gif" href="GraphicsC1/C1Image-topview.gif"/>
+	<item id="GraphicsC1_C1Image-wireless3G" media-type="image/gif" href="GraphicsC1/C1Image-wireless3G.gif"/>
+	<item id="GraphicsC1_C1Image-wirelessnormal" media-type="image/gif" href="GraphicsC1/C1Image-wirelessnormal.gif"/>
+	<item id="GraphicsC1_C1Image-shiftkey" media-type="image/gif" href="GraphicsC1/C1Image-shiftkey.gif"/>
+	<item id="GraphicsC1_C1Image-battery3-4full" media-type="image/gif" href="GraphicsC1/C1Image-battery3-4full.gif"/>
+	<item id="GraphicsC1_C1Image-sideview" media-type="image/gif" href="GraphicsC1/C1Image-sideview.gif"/>
+	<item id="GraphicsC1_C1Image-battery2-4full" media-type="image/gif" href="GraphicsC1/C1Image-battery2-4full.gif"/>
+	<item id="GraphicsC1_C1Image-altkey" media-type="image/gif" href="GraphicsC1/C1Image-altkey.gif"/>
+	<item id="GraphicsC1_WImage-textkeyboard" media-type="image/gif" href="GraphicsC1/WImage-textkeyboard.gif"/>
+	<item id="GraphicsC1_C1Image-batteryfull" media-type="image/gif" href="GraphicsC1/C1Image-batteryfull.gif"/>
+	<item id="GraphicsC1_C1Image-DownloadingIcon" media-type="image/gif" href="GraphicsC1/C1Image-DownloadingIcon.gif"/>
+	<item id="GraphicsC1_C1Image-bottomview" media-type="image/gif" href="GraphicsC1/C1Image-bottomview.gif"/>
+	<item id="GraphicsC1_C1Image-symkey" media-type="image/gif" href="GraphicsC1/C1Image-symkey.gif"/>
+	<item id="GraphicsC1_C1Image-wirelesssearching" media-type="image/gif" href="GraphicsC1/C1Image-wirelesssearching.gif"/>
+	<item id="GraphicsC1_C1Image-wirelesstoolow" media-type="image/gif" href="GraphicsC1/C1Image-wirelesstoolow.gif"/>
+	<item id="GraphicsC1_C1Image-backview" media-type="image/gif" href="GraphicsC1/C1Image-backview.gif"/>
+	<item id="GraphicsC1_C1Image-frontview" media-type="image/gif" href="GraphicsC1/C1Image-frontview.gif"/>
+	<item id="GraphicsC1_C1Image-navigation" media-type="image/gif" href="GraphicsC1/C1Image-navigation.gif"/>
+	<item id="GraphicsC1_C1Image-keyboard" media-type="image/gif" href="GraphicsC1/C1Image-keyboard.gif"/>
+	<item id="GraphicsC1_C1Screen-symbols" media-type="image/gif" href="GraphicsC1/C1Screen-symbols.gif"/>
+	<item id="GraphicsC1_C1Image-textkey" media-type="image/gif" href="GraphicsC1/C1Image-textkey.gif"/>
+	<item id="GraphicsC1_C1Image-wirelessoff" media-type="image/gif" href="GraphicsC1/C1Image-wirelessoff.gif"/>
+	<item id="GraphicsC1_C1Image-batterycharging" media-type="image/gif" href="GraphicsC1/C1Image-batterycharging.gif"/>
+	<item id="GraphicsC1_C1Image-wireless1X" media-type="image/gif" href="GraphicsC1/C1Image-wireless1X.gif"/>
+	<item id="GraphicsC1_C1Image-wirelessstrong" media-type="image/gif" href="GraphicsC1/C1Image-wirelessstrong.gif"/>
+	<item id="GraphicsC1_C1Screen-textsizechoices" media-type="image/gif" href="GraphicsC1/C1Screen-textsizechoices.gif"/>
+	<item id="GraphicsC1_C1Screen-ApplicationMenu" media-type="image/gif" href="GraphicsC1/C1Screen-ApplicationMenu.gif"/>
+	<item id="GraphicsC1_C1Image-battery1-4full" media-type="image/gif" href="GraphicsC1/C1Image-battery1-4full.gif"/>
+	<item id="GraphicsC1_C1Image-wirelessbatterylow" media-type="image/gif" href="GraphicsC1/C1Image-wirelessbatterylow.gif"/>
+	<item id="GraphicsC2_C2Image-exclamationpoint" media-type="image/gif" href="GraphicsC2/C2Image-exclamationpoint.gif"/>
+	<item id="GraphicsC2_C2Screen-homemenu" media-type="image/gif" href="GraphicsC2/C2Screen-homemenu.gif"/>
+	<item id="GraphicsC2_C2Screen-home" media-type="image/gif" href="GraphicsC2/C2Screen-home.gif"/>
+	<item id="GraphicsC2_C2Screen-homesortmenu" media-type="image/gif" href="GraphicsC2/C2Screen-homesortmenu.gif"/>
+	<item id="GraphicsC2_C2Screen-homeshowmenu" media-type="image/gif" href="GraphicsC2/C2Screen-homeshowmenu.gif"/>
+	<item id="GraphicsC4_C4Screen-Storeresults" media-type="image/gif" href="GraphicsC4/C4Screen-Storeresults.gif"/>
+	<item id="GraphicsC4_C4Image-searchsplit" media-type="image/gif" href="GraphicsC4/C4Image-searchsplit.gif"/>
+	<item id="GraphicsC4_C4Screen-searchbaronly" media-type="image/gif" href="GraphicsC4/C4Screen-searchbaronly.gif"/>
+	<item id="GraphicsC4_C4Screen-searchresults" media-type="image/gif" href="GraphicsC4/C4Screen-searchresults.gif"/>
+	<item id="GraphicsC4_C4Screen-dictionary" media-type="image/gif" href="GraphicsC4/C4Screen-dictionary.gif"/>
+	<item id="GraphicsC4_C4Screen-searchresults_politics" media-type="image/gif" href="GraphicsC4/C4Screen-searchresults_politics.gif"/>
+	<item id="GraphicsC7_C7Screen-settingsmenu" media-type="image/gif" href="GraphicsC7/C7Screen-settingsmenu.gif"/>
+	<item id="GraphicsC7_C7Screen-Settings" media-type="image/gif" href="GraphicsC7/C7Screen-Settings.gif"/>
+	<item id="GraphicsIcons_caution" media-type="image/gif" href="GraphicsIcons/caution.gif"/>
+	<item id="GraphicsIcons_tip" media-type="image/gif" href="GraphicsIcons/tip.gif"/>
+	<item id="GraphicsIcons_check" media-type="image/gif" href="GraphicsIcons/check.gif"/>
+	<item id="GraphicsWelcome_WScreen-textsizechoices" media-type="image/gif" href="GraphicsWelcome/WScreen-textsizechoices.gif"/>
+	<item id="GraphicsWelcome_WImage-returnkey" media-type="image/gif" href="GraphicsWelcome/WImage-returnkey.gif"/>
+	<item id="GraphicsWelcome_WImage-textkeyboard" media-type="image/gif" href="GraphicsWelcome/WImage-textkeyboard.gif"/>
+	<item id="GraphicsWelcome_WImage-progressindicator" media-type="image/gif" href="GraphicsWelcome/WImage-progressindicator.gif"/>
+	<item id="GraphicsWelcome_WImage-textkey" media-type="image/gif" href="GraphicsWelcome/WImage-textkey.gif"/>
+	<item id="GraphicsWelcome_welcome1" media-type="image/gif" href="GraphicsWelcome/welcome1.gif"/>
+	<item id="GraphicsWelcome_WImage-symkey" media-type="image/gif" href="GraphicsWelcome/WImage-symkey.gif"/>
+	<item id="GraphicsWelcome_WImage-handicon" media-type="image/gif" href="GraphicsWelcome/WImage-handicon.gif"/>
+	<item id="GraphicsWelcome_welcome2" media-type="image/jpeg" href="GraphicsWelcome/welcome2.jpeg"/>
+	<item id="GraphicsWelcome_Wreading" media-type="image/jpeg" href="GraphicsWelcome/Wreading.jpeg"/>	
+	<item id="GraphicsC3_C3Image-playbutton" media-type="image/gif" href="GraphicsC3/C3Image-playbutton.gif"/>
+	<item id="GraphicsC3_C3Screen-texttospeechmenu" media-type="image/gif" href="GraphicsC3/C3Screen-texttospeechmenu.gif"/>
+	<item id="GraphicsC3_C3Screen-news_close_articles" media-type="image/gif" href="GraphicsC3/C3Screen-news_close_articles.gif"/>
+	<item id="GraphicsC3_C3Image-pausebutton" media-type="image/gif" href="GraphicsC3/C3Image-pausebutton.gif"/>
+	<item id="GraphicsC3_C3Screen-notesmarks" media-type="image/gif" href="GraphicsC3/C3Screen-notesmarks.gif"/>
+	<item id="GraphicsC3_C3Screen-navigatenewspaper" media-type="image/gif" href="GraphicsC3/C3Screen-navigatenewspaper.gif"/>
+	<item id="GraphicsC3_C3Image-magnifyingglass" media-type="image/gif" href="GraphicsC3/C3Image-magnifyingglass.gif"/>
+	<item id="GraphicsC3_C3Screen-Audiobook" media-type="image/gif" href="GraphicsC3/C3Screen-Audiobook.gif"/>
+	<item id="GraphicsC3_C3Screen-textsizemenu" media-type="image/gif" href="GraphicsC3/C3Screen-textsizemenu.gif"/>
+	<item id="GraphicsC3_C3Screen-Reader" media-type="image/gif" href="GraphicsC3/C3Screen-Reader.gif"/>
+	<item id="GraphicsC3_C3Screen-newspaper_sections" media-type="image/gif" href="GraphicsC3/C3Screen-newspaper_sections.gif"/>
+	<item id="GraphicsC3_C3Image-deletekey" media-type="image/gif" href="GraphicsC3/C3Image-deletekey.gif"/>
+	<item id="GraphicsC3_C3Screen-blognextarticle" media-type="image/gif" href="GraphicsC3/C3Screen-blognextarticle.gif"/>
+	<item id="GraphicsC3_C3Screen-newspaper" media-type="image/gif" href="GraphicsC3/C3Screen-newspaper.gif"/>
+	<item id="GraphicsC3_C3Screen-readermenu" media-type="image/gif" href="GraphicsC3/C3Screen-readermenu.gif"/>
+	
+  <!-- table of contents [mandatory] -->
+	<item id="My_Table_of_Contents" media-type="application/x-dtbncx+xml" href="KUG.ncx"/>
+  
+  <!-- cover image [mandatory] -->
+  <item id="My_Cover" media-type="image/gif" href="GraphicsWelcome/WImage-cover.gif"/>
+</manifest>
+
+<!--
+	Spine:
+	Following manifest, there must be one and only one spine element, which contains one
+	or more itemref elements. Each itemref references an document designated
+	in the manifest. The order of the itemref elements organizes the associated content
+	files into the linear reading order of the publication.
+	
+	The toc attribute refers to the id ref of the NCX file specified in the manifest.
+	
+	For detailed info visit: 
+		http://www.idpf.org/2007/opf/OPF_2.0_final_spec.html#Section2.4
+		http://www.niso.org/workrooms/daisy/Z39-86-2005.html#NCX
+-->
+	
+<spine toc="My_Table_of_Contents">
+  <!-- the spine defines the linear reading order of the book -->
+	<itemref idref="item14"/>
+	<itemref idref="item13"/>
+	<itemref idref="item1"/>
+	<itemref idref="item3"/>
+	<itemref idref="item4"/>
+	<itemref idref="item5"/>
+	<itemref idref="item6"/>
+	<itemref idref="item15"/>
+	<itemref idref="item8"/>
+	<itemref idref="item16"/>
+	<itemref idref="item18"/>
+	<itemref idref="item19"/>
+	<itemref idref="item20"/>
+</spine>
+
+<!--
+	Guide:
+	Within the package there may be one guide element, containing one or more reference elements.
+	The guide element identifies fundamental structural components of the publication, to enable
+	Reading Systems to provide convenient access to them.
+  
+  For detailed info visit: http://www.idpf.org/2007/opf/OPF_2.0_final_spec.html#Section2.6
+  
+  The Kindle reading system support two special guide items which are both mandatory.
+  type="toc"  [mandatory]: a link to the HTML table of contents
+  type="text" [mandatory]: a link to where the content of the book starts (typically after the front matter)
+	
+  Kindle reading platforms need both thede guid items to provide a consistent user enxperience to the user.
+  
+  It is good practice to include both a logical table of contents (NCX) and an HTML table of contents
+  (made of hyperlinks). The NCX enables various advanced navigation features but the HTML table of
+  contents can easily be discovered by the user by paging through the book. Both are useful.
+	
+-->
+	
+<guide>
+	<reference type="toc" title="Table of Contents" href="toc.html"></reference>
+	<reference type="text" title="Welcome" href="Welcome.html"></reference>
+</guide>
+
+</package>
