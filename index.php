@@ -1,8 +1,8 @@
 <?php
 
 // Error Checking
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+//error_reporting(E_ALL);
+//ini_set('display_errors', '1');
 
 if (!$_POST['process']) {
 //Ask for the character file
@@ -17,8 +17,10 @@ echo "<form action='index.php' enctype='multipart/form-data' method='POST'>
 
 if ($_POST['process'] == 1) {
 
+shell_exec('mkdir ./output/temp');
+
 //Move user file
-$dnd4efile = '/var/www/DnD4e-Converter/temp/'. basename($_FILES['char']['name']);
+$dnd4efile = 'output/temp/'. basename($_FILES['char']['name']);
 move_uploaded_file($_FILES['char']['tmp_name'], $dnd4efile);
 
 //Set the character.
@@ -26,7 +28,7 @@ $filename = $_FILES['char']['name'];
 $fileinfo = pathinfo($filename);
 $filename = basename($filename,'.'.$fileinfo['extension']);
 
-$path = 'temp/'.$filename.'.dnd4e';
+$path = 'output/temp/'.$filename.'.dnd4e';
 
 //Load the character as an XML element
 $xml = simplexml_load_file($path);
@@ -252,7 +254,7 @@ $filename = $_POST['filename'];
 $char = unserialize($_POST['char']);
 */
 
-shell_exec('cp -R ./resources/epubtemplate ./output/temp');
+shell_exec('cp -R ./resources/epubtemplate ./output/temp/epub');
 
 foreach ($char as $name => $value) {
 	$charfile = "output/temp/OEBPS/Text/".$name.".xhtml";
@@ -262,19 +264,22 @@ foreach ($char as $name => $value) {
 }
 
 //Create epub from the temp directory
-shell_exec('zip -0X ./output/temp.epub ./output/temp/mimetype');
-shell_exec('zip -rg ./output/temp.epub ./output/temp/META-INF -x \*.DS_Store');
-shell_exec('zip -rg ./output/temp.epub ./output/temp/OEBPS -x \*.DS_Store');
+shell_exec('zip -0X ./output/temp.epub ./output/temp/epub/mimetype');
+shell_exec('zip -rg ./output/temp.epub ./output/temp/epub/META-INF -x \*.DS_Store');
+shell_exec('zip -rg ./output/temp.epub ./output/temp/epub/OEBPS -x \*.DS_Store');
 
 //Convert the epub into a mobi
 shell_exec('./resources/kindlegen/kindlegen ./output/temp.epub -o '.$filename.'.mobi');
 
 //Remove the temp files
 shell_exec('rm -Rf ./output/temp');
-shell_exec('rm -f ./output/temp.epub');
+shell_exec('mv ./output/temp.epub ./output/'.$filename.'.epub');
 
 // Send to Kindle, not yet implemented
 // echo "<br/><a href='convert.php?publish=true'>Send to Kindle</a><br/><br/>";
+
+echo "<br/><a href='output/$filename.mobi'>Download $filename.mobi</a><br/>";
+echo "<br/><a href='output/$filename.epub'>Download $filename.epub</a><br/>";
 
 }
 
