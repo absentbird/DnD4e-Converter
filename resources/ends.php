@@ -1,10 +1,6 @@
 <?php
 
-//Official Wizard's CSS, in case you want it.
-//<link href='http://www.wizards.com/dndinsider/compendium/styles/detail.css' media='screen' rel='stylesheet' type='text/css' />";
-
-$header = <<<HTML
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+$header = '<?xml version="1.0" encoding="utf-8" standalone="no"?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 
@@ -24,8 +20,7 @@ $header = <<<HTML
 
 <body>
 
-  <div>
-HTML;
+  <div>';
 
 $footer = "</div></body></html>";
 

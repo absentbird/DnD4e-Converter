@@ -1,30 +1,47 @@
 <?php
 
 // Error Checking
-/* 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-*/
 
-// Set the character.
-$char = 'example';
+if (!$_POST['process']) {
+//Ask for the character file
+echo "<form action='index.php' enctype='multipart/form-data' method='POST'>
+<input type='hidden' name='MAX_FILE_SIZE' value='300000' />
+<label for='char'>Select your DnD4e file:</label>
+<input type='file' name='char' size='10' />
+<input type='hidden' name='process' value='1' />
+<br/><input type='submit' value='Import' />
+</form>";
+}
 
-$path = 'dnd4efiles/'.$char.'.dnd4e';
+if ($_POST['process'] == 1) {
+
+//Move user file
+$dnd4efile = '/var/www/DnD4e-Converter/temp/'. basename($_FILES['char']['name']);
+move_uploaded_file($_FILES['char']['tmp_name'], $dnd4efile);
+
+//Set the character.
+$filename = $_FILES['char']['name'];
+$fileinfo = pathinfo($filename);
+$filename = basename($filename,'.'.$fileinfo['extension']);
+
+$path = 'temp/'.$filename.'.dnd4e';
 
 //Load the character as an XML element
 $xml = simplexml_load_file($path);
 
 //Set character details
 $details = array();
-$details['name'] 			= (string)$xml->CharacterSheet->Details[0]->name;
-$details['player'] 		= (string)$xml->CharacterSheet->Details[0]->Player;
-$details['level'] 		= (int)$xml->CharacterSheet->Details[0]->Level;
-$details['height'] 		= (string)$xml->CharacterSheet->Details[0]->Height;
-$details['weight'] 		= (string)$xml->CharacterSheet->Details[0]->Weight;
-$details['gender'] 		= (string)$xml->CharacterSheet->Details[0]->Gender;
-$details['age'] 			= (string)$xml->CharacterSheet->Details[0]->Age;
-$details['alignment'] = (string)$xml->CharacterSheet->Details[0]->Alignment;
-$details['money'] 		= (string)$xml->CharacterSheet->Details[0]->CarriedMoney;
+$details['name'] 	= (string)$xml->CharacterSheet->Details[0]->name;
+$details['player'] 	= (string)$xml->CharacterSheet->Details[0]->Player;
+$details['level'] 	= (int)$xml->CharacterSheet->Details[0]->Level;
+$details['height'] 	= (string)$xml->CharacterSheet->Details[0]->Height;
+$details['weight'] 	= (string)$xml->CharacterSheet->Details[0]->Weight;
+$details['gender'] 	= (string)$xml->CharacterSheet->Details[0]->Gender;
+$details['age'] 	= (string)$xml->CharacterSheet->Details[0]->Age;
+$details['alignment'] 	= (string)$xml->CharacterSheet->Details[0]->Alignment;
+$details['money'] 	= (string)$xml->CharacterSheet->Details[0]->CarriedMoney;
 
 //Assign the stats to an array
 $stats = array();
@@ -53,79 +70,7 @@ foreach ($xml->CharacterSheet->RulesElementTally[0]->RulesElement as $rule) {
 	}
 }
 
-// Here lies many hours of wasted work.
-/*
-function poachdata($email, $password, $data) {
-$powers = array();
-
-// Create a cookie file
-$ckfile = tempnam ("/tmp", "CURLCOOKIE");
-
-// Visit the page to set the cookie properly
-$url = 'http://www.wizards.com/dndinsider/compendium/login.aspx';
-
-// Spoofing Yahoo Seeker bot
-$useragent="YahooSeeker-Testing/v3.9 (compatible; Mozilla 4.0; MSIE 5.5; http://search.yahoo.com/)";
-
-// Grab daily codes
-$ch = curl_init();
-
-curl_setopt($ch,CURLOPT_URL,$url);
-curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
-curl_setopt ($ch, CURLOPT_COOKIEJAR, $ckfile);
-curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
-$output = curl_exec ($ch);
-$doc = new DOMDocument();
-$doc->loadHTML($output);
-$view = "fail";
-$event = "fail";
-foreach ($doc->getElementsByTagName("input") as $input) {
-$name = trim($input->getAttribute("name"));
-if($name == '__VIEWSTATE') $view = trim((string)$input->getAttribute("value"));
-if($name == '__EVENTVALIDATION') $event = trim((string)$input->getAttribute("value"));
-}
-
-$fields = array(
-	'__VIEWSTATE'=>urlencode($view),
-	'__EVENTVALIDATION'=>urlencode($event),
-	'email'=>urlencode($email),
-	'password'=>urlencode($password),
-	'InsiderSignin'=>urlencode('Sign In')
-);
-
-// url-ify the data for the POST
-$fields_string = "";
-foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
-rtrim($fields_string,'&');
-
-// set the number of POST vars, POST data
-curl_setopt($ch,CURLOPT_POST,count($fields));
-curl_setopt($ch,CURLOPT_POSTFIELDS,$fields_string);
-$output = curl_exec ($ch);
-
-curl_close($ch);
-
-// Grab data
-foreach ($data as $url) {
-	if ($url) {
-		$ch = curl_init ($url);
-		curl_setopt ($ch, CURLOPT_COOKIEFILE, $ckfile);
-		curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
-		$output = curl_exec ($ch);
-		curl_close($ch);
-		$powers[] = $output;
-	}
-}
-
-return $powers;
-}
-
-// Use your D&D Insider email and password
-$powers = poachdata('DDI_EMAIL', 'DDI_PASSWORD', $array('url attributes of powers');
-*/
-
 //Format each section of a character sheet.
-
 $charsheet = "";
 
 $charsheet .= "<h1>".$details['name']."</h1>";
@@ -265,7 +210,6 @@ if ($specific['name'] == 'Component Cost') $equipment .= "<b>Component Cost:</b>
 if ($specific['name'] == 'Duration') $equipment .= "<b>Duration:</b> ".$specific."<br/>";
 if ($specific['name'] == 'Prerequisite') $equipment .= "<b>Prerequisite:</b> ".$specific."<br/>";
 }
-$equipment .= $loot->RulesElement."<br/>";
 }
 if ($loot) $equipment .= "<br/>";
 unset($loot);
@@ -275,25 +219,46 @@ unset($loot);
 include_once('resources/ends.php');
 
 //Create master character record
-$charv = $header.$charsheet.$features.$powers.$equipment.$footer;
+$charv = $charsheet.$features.$powers.$equipment;
 
+//Show character record
 echo $charv;
 
 //Format array with each section as its own HTML file for epub conversion.
 $char = array();
-$char['charsheet'] = $header.$charsheet.$footer;
-$char['features'] = $header.$features.$footer;
-$char['powers'] =  $header.$powers.$footer;
-$char['equipment'] = $header.$equipment.$footer;
+$char['charsheet'] 	= $header.$charsheet.$footer;
+$char['features'] 	= $header.$features.$footer;
+$char['powers'] 	= $header.$powers.$footer;
+$char['equipment'] 	= $header.$equipment.$footer;
+
+/*
+$chararray = serialize($char);
+
+//Button for approval
+echo "<br/><form action='index.php' method='POST'>
+<input type='hidden' name='filename' value='$filename' />
+<input type='hidden' name='char' value='$chararray' />
+<input type='hidden' name='process' value='2' />
+<input type='submit' name='submit' value='Approve' />
+</form><br/>";
+
+}
 
 //After the character is approved prep the output.
-if ($_GET['make']) {
+if ($_POST['process'] == 2) {
+
+//Extract information from POST
+$filename = $_POST['filename'];
+$char = unserialize($_POST['char']);
+*/
+
 shell_exec('cp -R ./resources/epubtemplate ./output/temp');
+
 foreach ($char as $name => $value) {
-$charfile = "output/temp/OEBPS/Text/".$name.".xhtml";
-$file = fopen($charfile, 'w') or die("can't open file");
-fwrite($file, $value);
-fclose($file);
+	$charfile = "output/temp/OEBPS/Text/".$name.".xhtml";
+	$file = fopen($charfile, 'w') or die("can't open file");
+	fwrite($file, $value);
+	fclose($file);
 }
 
 //Create epub from the temp directory
@@ -302,7 +267,7 @@ shell_exec('zip -rg ./output/temp.epub ./output/temp/META-INF -x \*.DS_Store');
 shell_exec('zip -rg ./output/temp.epub ./output/temp/OEBPS -x \*.DS_Store');
 
 //Convert the epub into a mobi
-shell_exec('./resources/kindlegen/kindlegen ./output/temp.epub -o ./output/'.$char.'.mobi');
+shell_exec('./resources/kindlegen/kindlegen ./output/temp.epub -o '.$filename.'.mobi');
 
 //Remove the temp files
 shell_exec('rm -Rf ./output/temp');
@@ -310,9 +275,7 @@ shell_exec('rm -f ./output/temp.epub');
 
 // Send to Kindle, not yet implemented
 // echo "<br/><a href='convert.php?publish=true'>Send to Kindle</a><br/><br/>";
-}
 
-//Convert button for approval
-else echo "<br/><a href='convert.php?make=true'>Convert</a><br/><br/>";
+}
 
 ?>
