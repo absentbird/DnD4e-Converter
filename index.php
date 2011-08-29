@@ -257,7 +257,7 @@ $char = unserialize($_POST['char']);
 shell_exec('cp -R ./resources/epubtemplate ./output/temp/epub');
 
 foreach ($char as $name => $value) {
-	$charfile = "output/temp/OEBPS/Text/".$name.".xhtml";
+	$charfile = "output/temp/epub/OEBPS/Text/".$name.".xhtml";
 	$file = fopen($charfile, 'w') or die("can't open file");
 	fwrite($file, $value);
 	fclose($file);
