@@ -14,4 +14,4 @@ Because I got a Kindle and was tired of paying for buckets of ink and paper to f
 
 h2. Now What?
 
-I don't know really. The project has accomplished what I needed it for. If anyone wants to use it or improve it it is here for them to fork with.
+I don't know really. The project has accomplished what I needed it for. If anyone wants to use it or improve it, it is here for them to fork with.
