@@ -10,7 +10,7 @@ DnD4e files are just xml. By parsing them you can generate html files which can 
 
 h2. Why
 
-Because I got a Kindle and was tired of paying for buckets of ink and paper to finance my D&D habbit. Also, why not? It is awesome!
+Because I got a Kindle and was tired of paying for buckets of ink and paper to finance my D&D habit. Also, why not? It is awesome!
 
 h2. Now What?
 
